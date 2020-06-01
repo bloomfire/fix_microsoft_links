@@ -2,7 +2,8 @@ module FixMicrosoftLinks
   module Rack
     class Response
       USER_AGENTS_REGEX = /[^\w](Word|Excel|PowerPoint|ms-office|Konqueror.+KIO)([^\w]|\z)/
-      EXCLUDE_USER_AGENTS_REGEX = /Microsoft Outlook/
+      MS_OUTLOOK_CLICK_TO_RUN_REGEX = Regexp.escape("Mozilla/4.0 (compatible; ms-office; MSOffice 16)")
+      EXCLUDE_USER_AGENTS_REGEX = /Microsoft Outlook|#{MS_OUTLOOK_CLICK_TO_RUN_REGEX}/
 
       def initialize(app)
         @app = app

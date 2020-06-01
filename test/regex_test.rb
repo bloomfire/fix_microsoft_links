@@ -7,6 +7,7 @@ class RegexTest < Test::Unit::TestCase
   def test_outook
     assert_no_match "Microsoft Office/14.0 (Windows NT 6.0; Microsoft Outlook 14.0.4760; Pro)"
     assert_no_match "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; InfoPath.3; Microsoft Outlook 14.0.6131; ms-office; MSOffice 14)"
+    assert_no_match "Mozilla/4.0 (compatible; ms-office; MSOffice 16)" # Microsoft Outlok C2R
   end
 
   def test_other_microsoft_apps
